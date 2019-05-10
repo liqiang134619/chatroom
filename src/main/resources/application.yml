@@ -1,0 +1,41 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/liqiang?characterEncoding=utf-8
+      username: root
+      password: 123456
+      driverClassName: com.mysql.jdbc.Driver
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 10000
+      testOnBorrow: true
+      testOnReturn: false
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+  redis:
+    host: 61.155.157.42
+    port: 6382
+    password: tE2-WJZ-u5F-6UJ
+    database: 15
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+  mvc:
+    view:
+      suffix: .html
+      prefix: classpath:/templates/
+  thymeleaf:
+    cache: false
+
+#pojo±ðÃûÉ¨Ãè°ü
+mybatis:
+  type-aliases-package: com.example.chatroom.domain.User
+  mapper-locations: classpath:com.example.chatroom.dao/*Mapper.xml
+pagehelper:
+  helper-dialect: mysql

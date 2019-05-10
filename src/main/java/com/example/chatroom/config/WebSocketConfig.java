@@ -1,5 +1,8 @@
 package com.example.chatroom.config;
 
+import com.example.chatroom.controller.WebSocketServer;
+import com.example.chatroom.service.ChatRecordService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
@@ -15,5 +18,10 @@ public class WebSocketConfig {
     @Bean
     public ServerEndpointExporter serverEndpointExporter() {
         return new ServerEndpointExporter();
+    }
+
+    @Autowired
+    public void SetChattingService(ChatRecordService chatRecordService) {
+        WebSocketServer.recordService = chatRecordService;
     }
 }

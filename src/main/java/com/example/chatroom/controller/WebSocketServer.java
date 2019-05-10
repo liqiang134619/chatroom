@@ -1,5 +1,6 @@
 package com.example.chatroom.controller;
 
+import com.example.chatroom.service.ChatRecordService;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 import javax.websocket.OnClose;
@@ -11,7 +12,9 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 /**
  *
@@ -19,10 +22,14 @@ import org.springframework.stereotype.Component;
  * @date 2019/5/7
  */
 
-
+@Controller
 @ServerEndpoint("/websocket/{param}")
 @Component
 public class WebSocketServer {
+
+
+
+    public static ChatRecordService recordService;
 
     /**
      * onlineCount
@@ -92,6 +99,7 @@ public class WebSocketServer {
         broadcast(message);
     }
 
+
     /**
      * 收到客户端消息后的调用方法
      * @param message   客户端发送的消息
@@ -103,6 +111,9 @@ public class WebSocketServer {
 
         // 广播消息
         broadcast(String.format("%s:%s",nickName, message));
+
+//         保存聊天消息到数据中  可以异步调用
+        recordService.saveChatting(nickName,message);
     }
 
     /**
@@ -112,7 +123,7 @@ public class WebSocketServer {
      */
     @OnError
     public void onError(Session session, Throwable error) {
-        LOGGER.error("【==> websocket出现错误!!!,error:{}",error.getStackTrace());
+        LOGGER.error("【==> websocket出现错误!!!,error:{},cause:{}",error.getMessage(),error.getCause());
 
     }
 
@@ -137,6 +148,7 @@ public class WebSocketServer {
                     LOGGER.error("[===> 发生异常,用户断开连接 error:{}]",e1.getStackTrace());
                 }
             }
+
         });
     }
 

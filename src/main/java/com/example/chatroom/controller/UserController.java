@@ -1,6 +1,7 @@
 package com.example.chatroom.controller;
 
 import com.example.chatroom.domain.User;
+import com.example.chatroom.service.ChatRecordService;
 import com.example.chatroom.service.UserService;
 import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ public class UserController {
 
     @Autowired
     UserService userService;
+
 
 
     @RequestMapping("/login")

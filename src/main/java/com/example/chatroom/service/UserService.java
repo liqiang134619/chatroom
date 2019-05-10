@@ -14,8 +14,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author: Liq
- * @Date: 2019/5/10
+ * @author  Liq
+ * @date 2019/5/10
  * 用户service类
  */
 @Service

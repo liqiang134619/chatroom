@@ -4,8 +4,8 @@ import com.example.chatroom.domain.User;
 import org.springframework.stereotype.Component;
 
 /**
- * @Author: Liq
- * @Date: 2019/5/10
+ * @author Liq
+ * @date 2019/5/10
  * 数据库操作的类
  */
 @Component

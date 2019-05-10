@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @Author: Liq
- * @Date: 2019/5/10
+ * @author Liq
+ * @date 2019/5/10
  * 用户登录
  */
 @Controller()

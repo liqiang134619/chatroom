@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
- * @Author: Liq
- * @Date: 2019/5/10
+ * @author Liq
+ * @date 2019/5/10
  * 开启websocket的支持
  */
 @Configuration

@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.chatroom.dao.IChattingRecordMapper">
   <insert id="insertChatting" parameterType="com.example.chatroom.domain.Record">
-       INSERT INTO records values (null,#{sender},#{message},#{date})
+    <selectKey keyProperty="id" resultType="string" order="BEFORE">
+      select replace(uuid(), '-', '') as id from dual
+    </selectKey>
+    INSERT INTO records values (#{id},#{sender},#{message},#{date})
     </insert>
 </mapper>

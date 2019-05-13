@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller()
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
 
@@ -27,7 +27,7 @@ public class UserController {
 
 
 
-    @RequestMapping("/user-name/{id}")
+    @RequestMapping("/login")
     public String login(User user, Model model) {
 
 

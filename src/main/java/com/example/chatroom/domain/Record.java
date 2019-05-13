@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 public class Record {
 
-    private int id;
+    private String id;
     private String sender;
     private String message;
     private Date date;

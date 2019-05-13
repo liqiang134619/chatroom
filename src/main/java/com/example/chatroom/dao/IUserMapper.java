@@ -2,7 +2,6 @@ package com.example.chatroom.dao;
 
 import com.example.chatroom.domain.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
 
 /**
  *

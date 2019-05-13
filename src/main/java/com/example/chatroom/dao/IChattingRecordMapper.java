@@ -1,14 +1,16 @@
 package com.example.chatroom.dao;
 
 import com.example.chatroom.domain.Record;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
 /**
+ * 保存聊天记录的类
  * @author Liq
  * @date 2019/5/10
- * 保存聊天记录的类
+ *
  */
-@Component
+@Mapper
 public interface IChattingRecordMapper {
 
     /**

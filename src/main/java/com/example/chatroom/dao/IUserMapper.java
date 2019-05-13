@@ -1,14 +1,17 @@
 package com.example.chatroom.dao;
 
 import com.example.chatroom.domain.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
 /**
+ *
+ * 用户信息数据库操作的类
  * @author Liq
  * @date 2019/5/10
- * 用户信息数据库操作的类
+ *
  */
-@Component
+@Mapper
 public interface IUserMapper {
 
 

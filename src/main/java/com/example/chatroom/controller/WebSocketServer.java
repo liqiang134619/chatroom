@@ -47,7 +47,7 @@ public class WebSocketServer {
      * nickName
      * 用户姓名
      */
-    private static String nickName;
+    private String nickName;
 
     /**
      * session
@@ -112,7 +112,7 @@ public class WebSocketServer {
         // 广播消息
         broadcast(String.format("%s:%s",nickName, message));
 
-//         保存聊天消息到数据中  可以异步调用
+        // 保存聊天消息到数据中  可以设计异步调用
         recordService.saveChatting(nickName,message);
     }
 
@@ -131,7 +131,7 @@ public class WebSocketServer {
     /**
      * 群发广播消息
      * @param message 消息
-     * @throws IOException 异常信息
+     *
      */
     private static void broadcast(String message)  {
         webSocketSet.forEach(wb ->{

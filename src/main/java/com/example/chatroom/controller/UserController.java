@@ -12,21 +12,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
+ *  用户登录
  * @author Liq
  * @date 2019/5/10
- * 用户登录
+ *
  */
 @Controller()
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
 
 
-    @RequestMapping("/login")
+    @RequestMapping("/user-name/{id}")
     public String login(User user, Model model) {
 
 

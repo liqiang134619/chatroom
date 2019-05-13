@@ -8,16 +8,18 @@ import org.springframework.stereotype.Service;
 
 
 /**
+ *
+ *
+ * 保存用户的聊天记录
  * @author Liq
  * @date 2019/5/10
- * 保存用户的聊天记录的类
  */
 
 @Service
 public class ChatRecordService {
 
     @Autowired
-    IChattingRecordMapper chattingRecord;
+    private IChattingRecordMapper chattingRecord;
 
 
 
@@ -36,7 +38,7 @@ public class ChatRecordService {
         record.setMessage(message);
         record.setDate(date);
 
-        chattingRecord.InsertChatting(record);
+        chattingRecord.insertChatting(record);
 
 
     }

@@ -13,7 +13,7 @@ public interface IChattingRecordMapper {
 
     /**
      * 插入聊天记录
-     * @param record
+     * @param record 聊天记录
      */
-    void InsertChatting(Record record);
+    void insertChatting(Record record);
 }

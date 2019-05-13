@@ -7,6 +7,7 @@ import lombok.ToString;
 /**
  * @author Liq
  * @date 2019/5/10
+ * 聊天纪录实体类
  */
 @Data
 @ToString

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author Liq
  * @date 2019/5/10
- * 数据库操作的类
+ * 用户信息数据库操作的类
  */
 @Component
 public interface IUserMapper {

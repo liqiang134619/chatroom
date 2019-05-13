@@ -33,7 +33,7 @@ spring:
   thymeleaf:
     cache: false
 
-#pojo±ğÃûÉ¨Ãè°ü
+
 mybatis:
   type-aliases-package: com.example.chatroom.domain.User
   mapper-locations: classpath:com.example.chatroom.dao/*Mapper.xml

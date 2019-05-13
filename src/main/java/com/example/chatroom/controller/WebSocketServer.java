@@ -93,7 +93,7 @@ public class WebSocketServer {
         webSocketSet.remove(this);
         String message = String.format("[%s,%s]",nickName,"离开聊天室");
         subOnlineCount();
-        LOGGER.info("【==>用户：{} 退出聊天室,Online:{}】" , nickName,getOnlineCount());
+        LOGGER.info("【==> 用户：{} 退出聊天室,Online:{}】" , nickName,getOnlineCount());
 
         // 广播发送消息
         broadcast(message);
@@ -153,13 +153,13 @@ public class WebSocketServer {
     }
 
 
-    public static synchronized int getOnlineCount() {
+    private static synchronized int getOnlineCount() {
         return onlineCount;
     }
-    public static synchronized void addOnlineCount() {
+    private static synchronized void addOnlineCount() {
         WebSocketServer.onlineCount++;
     }
-    public static synchronized void subOnlineCount() {
+    private static synchronized void subOnlineCount() {
         WebSocketServer.onlineCount--;
     }
 

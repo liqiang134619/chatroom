@@ -20,8 +20,9 @@ public class WebSocketConfig {
         return new ServerEndpointExporter();
     }
 
+    // 解决websocket注入问题
     @Autowired
-    public void SetChattingService(ChatRecordService chatRecordService) {
+    public void setChattingService(ChatRecordService chatRecordService) {
         WebSocketServer.recordService = chatRecordService;
     }
 }

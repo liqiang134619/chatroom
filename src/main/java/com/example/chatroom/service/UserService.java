@@ -14,19 +14,22 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 /**
+ *
+ *
+ * 用户service类
  * @author  Liq
  * @date 2019/5/10
- * 用户service类
+ *
  */
 @Service
 public class UserService {
 
 
     @Autowired
-    RedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;
 
     @Autowired
-    IUserMapper iUserMapper;
+    private IUserMapper iUserMapper;
 
     private final static Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
